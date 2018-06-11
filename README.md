@@ -4,4 +4,4 @@ Installation and Execution:
  - Install Java (written for 1.8)
  - Install Maven (configured for 3.3.3)
  - Run ‘mvn clean package’ from the root of the haplObserve cloned (local) repository
- - run.sh <inputFile> <sampleHapOutFile> <singleAlleleHapOutFile> <logFile> <sampleTwoFieldHapOutFile>
+ - run.sh &lt;inputFile> &lt;sampleHapOutFile> &lt;singleAlleleHapOutFile> &lt;logFile> &lt;sampleTwoFieldHapOutFile>
