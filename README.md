@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
+
 Installation and Execution:
  - Install Git
  - Clone the repository (git clone https://github.com/mpresteg/haplObserve.git)
