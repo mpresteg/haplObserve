@@ -1,3 +1,7 @@
 Installation and Execution:
- - mvn package
+ - Install Git
+ - Clone the repository (git clone https://github.com/mpresteg/haplObserve.git)
+ - Install Java (written for 1.8)
+ - Install Maven (configured for 3.3.3)
+ - Run ‘mvn clean package’ from the root of the haplObserve cloned (local) repository
  - run.sh <inputFile> <sampleHapOutFile> <singleAlleleHapOutFile> <logFile> <sampleTwoFieldHapOutFile>
