@@ -34,12 +34,7 @@ public class IsLocusDRB345 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		IsLocusDRB345 test1 = new IsLocusDRB345("HLA-A");
-		System.out.println(test1.getTestResult());
-		IsLocusDRB345 test2 = new IsLocusDRB345("HLA-DRB1");
-		System.out.println(test2.getTestResult());
-		IsLocusDRB345 test3 = new IsLocusDRB345("HLA-DRB4");
-		System.out.println(test3.getTestResult());
+		
 
 	}
 

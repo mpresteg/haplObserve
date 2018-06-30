@@ -77,43 +77,5 @@ public class AmbiguityList extends AmbiguityListAbstract{
 			}
 		}		
 	}
-	
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		AmbiguityList amList = new AmbiguityList();
-	for (String str : amList.getAmbiguityList()) {
-			System.out.println(str);
-		}
-		
-		System.out.println();
-		amList.convertToAmbiguityString("HLA-DRB1*15:01:01:01");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DRB3*02:02:01:02v1");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-A*01:01:01:01");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DPB1*13:01:01");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DPB1*02:01:19");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DRB1*03:01:01:01");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DQA1*01:02:01:01/HLA-DQA1*01:02:01:03");
-		System.out.println(amList.getConverted());
-		
-		amList.convertToAmbiguityString("HLA-DPB1*04:01:01:01/HLA-DPB1*04:01:01:02");
-		System.out.println(amList.getConverted());
-
-	}
 
 }

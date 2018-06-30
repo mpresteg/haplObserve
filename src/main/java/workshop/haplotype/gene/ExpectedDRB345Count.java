@@ -4,7 +4,6 @@
  */
 package workshop.haplotype.gene;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,34 +47,5 @@ public class ExpectedDRB345Count {
 		return expectedCombination;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		List<String> list = new ArrayList<String>();
-		list.add("HLA-DRB1*07:01:01:01");
-		list.add("HLA-DRB1*04:04:01");
-		ExpectedDRB345Count exp = new ExpectedDRB345Count(list);
-		System.out.println(exp.getDrb345Count());
-		for (String drb1Type : list) {
-			System.out.println(drb1Type);
-			System.out.println(exp.getExpectedCombination().get(drb1Type));
-			System.out.println();
-		}
-		System.out.println();
-		
-		List<String> list1 = new ArrayList<String>();	
-		list1.add("HLA-DRB1*04:04:01");
-		list1.add("HLA-DRB1*08:02:01");
-		ExpectedDRB345Count exp1 = new ExpectedDRB345Count(list1);
-		System.out.println(exp1.getDrb345Count());
-		for (String drb1Type : list1) {
-			System.out.println(drb1Type);
-			System.out.println(exp1.getExpectedCombination().get(drb1Type));
-			System.out.println();
-		}
-
-	}
 
 }

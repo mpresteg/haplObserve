@@ -27,16 +27,5 @@ public class HLAgene {
 		return geneList;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		HLAgene test = new HLAgene();
-		for (String gene : test.getGeneList()) {
-			System.out.println(gene);
-		}
-
-	}
 
 }

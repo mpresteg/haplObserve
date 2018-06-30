@@ -37,21 +37,5 @@ public class NonRedundantList {
 		return list;
 	}
 	
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		NonRedundantList non2 = new NonRedundantList();
-		String [] list2 = {"", "DRB1", "DRB1", "DRB3", "DRB4", "DRB4", "DRB5"};
-		for (String str : list2) {
-			non2.addNonRedundantList(str);
-		}
-		for (String str : non2.getList()) {
-			System.out.println(str);
-		}
-		
-	}
 
 }

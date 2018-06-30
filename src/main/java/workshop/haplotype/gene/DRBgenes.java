@@ -73,23 +73,5 @@ public class DRBgenes extends HLAgene {
 	public Map<String, List<String>> getDrb1MapList() {
 		return drb1MapList;
 	}
-	
-	
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		DRBgenes drb = new DRBgenes();
-		for (String drb345 : drb.getDrb0345List()) {
-			System.out.println(drb345);
-			for (String drb1 : drb.getDrb1MapList().get(drb345)) {
-				System.out.println(drb1);
-			}
-			System.out.println();
-		}
-
-	}
 
 }

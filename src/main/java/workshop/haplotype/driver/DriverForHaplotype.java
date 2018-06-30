@@ -1,5 +1,6 @@
 /**
- * 
+ * This driver is to run HaplObser for single family
+ * Input file is table format 
  */
 package workshop.haplotype.driver;
 
