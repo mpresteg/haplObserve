@@ -73,15 +73,4 @@ public class FixAmbiguityNumericalOrder {
 		return fixedGl;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "HLA-DQB1*05:01:01:02/HLA-DQB1*05:01:01:01/HLA-DQB1*05:01:01:03";
-		FixAmbiguityNumericalOrder fano = new FixAmbiguityNumericalOrder(str);
-		System.out.println(fano.getFixedGl());
-
-	}
-
 }

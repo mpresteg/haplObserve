@@ -77,27 +77,10 @@ public class PrioritizePhaseAmbiguity {
 			orderedAmbiguity += str;
 			count++;
 		}
-	}	
-		
+	}			
 	
 	public String getOrderedAmbiguity() {
 		return orderedAmbiguity;
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = 
-//		"HLA-DPB1*04:01:01:01+HLA-DPB1*04:02:01:02|HLA-DPB1*105:01+HLA-DPB1*126:01";
-//		"HLA-DPB1*105:01+HLA-DPB1*126:01|HLA-DPB1*04:01:01:01+HLA-DPB1*04:02:01:02";
-//		"HLA-DPB1*126:01+HLA-DPB1*105:01|HLA-DPB1*04:02:01:02+HLA-DPB1*04:01:01:01";
-//		"HLA-DPB1*05:01:01+HLA-DPB1*107:01/HLA-DPB1*13:01:01|HLA-DPB1*135:01+HLA-DPB1*519:01";
-		"HLA-DPB1*03:01:01+HLA-DPB1*04:01:01:01|HLA-DPB1*03:01:01+HLA-DPB1*04:01:01:02|HLA-DPB1*124:01+HLA-DPB1*350:01";
-		PrioritizePhaseAmbiguity ppa = new PrioritizePhaseAmbiguity(str);
-		System.out.println(ppa.getOrderedAmbiguity());
-
 	}
 
 }
