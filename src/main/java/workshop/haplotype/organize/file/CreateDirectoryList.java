@@ -54,12 +54,16 @@ public class CreateDirectoryList {
 			}
 		}
 		
-		File inside = new File( globalDir + "collective");	// deal with collective directory
+		// TODO:  double check - changing to haplotype
+		//File inside = new File( globalDir + "collective");	// deal with collective directory
+		File inside = new File(globalDir + "collective/haplotype"); // deal with collective/haplotype directory
 		File [] inputList = inside.listFiles();
 		for (File input : inputList) {
 			if (input.isFile()) {
 				if (input.getName().contains("FAM_Haplotype_")) {
-					global = globalDir + "collective/" + input.getName();
+					// TODO:  double check - changing to haplotype
+					//global = globalDir + "collective/" + input.getName();
+					global = globalDir + "collective/haplotype/" + input.getName();
 				}					
 			}
 		}
