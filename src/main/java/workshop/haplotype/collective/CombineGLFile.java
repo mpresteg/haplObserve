@@ -34,7 +34,6 @@ public class CombineGLFile {
 	
 	public void combine(String collective) {
 		combined = new LinkedList<String>();
-		
 		File glFile = new File(collective);
 		File [] listGlFile = glFile.listFiles();
 		header = "";
