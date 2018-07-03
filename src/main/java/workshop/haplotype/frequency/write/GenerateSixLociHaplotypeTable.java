@@ -25,6 +25,9 @@ public class GenerateSixLociHaplotypeTable extends GenerateFamilyHaplotype {
 		//new GenerateCountryHapGLstring(global, 
 		//			collective + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		
+		// better handling for directories when trailing slash not provided
+		global = global.endsWith("/") ? global : (global + "/");
+		
 		new GenerateCountryHapGLstring(global, 
 				haplotype + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		new GenerateCountryHapGLstring(global, 

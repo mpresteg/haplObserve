@@ -25,6 +25,9 @@ public class GenerateFullHaplotypeFrequencyTable extends GenerateFamilyHaplotype
 		//new GenerateCountryHapGLstring(global, 
 		//			collective + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		
+		// better handling for directories when trailing slash not provided
+		global = global.endsWith("/") ? global : (global + "/");
+		
 		new GenerateCountryHapGLstring(global, 
 				haplotype + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		new GenerateCountryHapGLstring(global, 
@@ -39,6 +42,7 @@ public class GenerateFullHaplotypeFrequencyTable extends GenerateFamilyHaplotype
 		for (int index = 0; index < ht.getHapTargetList().size(); index++) {	// go through target	
 			System.out.println("Processing: " + ht.getNameList().get(index));
 			String output = global + "summary/Global_" + ht.getNameList().get(index) + "_Haplotype_Summary_" + today + ".csv";
+
 			new GenerateGlobalGroupsHapCountTable(global, 
 					ht.getHapTargetList().get(index), output);
 			

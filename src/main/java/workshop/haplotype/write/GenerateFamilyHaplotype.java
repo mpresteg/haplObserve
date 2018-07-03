@@ -25,7 +25,9 @@ public class GenerateFamilyHaplotype {
 	 * 
 	 */
 	public GenerateFamilyHaplotype(String global) {
-		// TODO Auto-generated constructor stub
+		// better handling for directories when trailing slash not provided
+		global = global.endsWith("/") ? global : (global + "/");
+
 		collective = global + "collective/"; 
 		CombineGLFile combined = new CombineGLFile(collective);
 		String famcsv = collective+ "FAMCSV/";
@@ -42,7 +44,8 @@ public class GenerateFamilyHaplotype {
 				"_Haplotype_Summary_Table_" + today + ".csv");				
 		new GenerateHaplotypeSummary(haplotype, "Validation", fsrc, today);
 		
-		new GenerateHaplotypeGLStringSummary(haplotype, collective, "Validation", fsrc, today);
+		// moved to haplotype sub-directory to separate files to be checked in from those that are generated
+		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "Validation", fsrc, today);
 		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "SingleAlleleHapType", fsrc, today);
 		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "TwoFieldAlleleHapType", fsrc, today);
 		
