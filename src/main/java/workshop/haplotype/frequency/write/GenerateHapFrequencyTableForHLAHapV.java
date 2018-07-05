@@ -26,14 +26,16 @@ public class GenerateHapFrequencyTableForHLAHapV {
 		// TODO Auto-generated constructor stub
 		File dir = new File(global);
 		String hapV = "HLAHapV/";
-		new File(dir.getAbsolutePath() + "/" + hapV).mkdir();	// make FAMCSV dir
+		new File(dir.getAbsolutePath() + "/" + hapV).mkdir();	// make HLAHapV dir
 		try {
 			BufferedWriter out = 
 				new BufferedWriter(new FileWriter(dir.getAbsolutePath() + "/" + hapV + targetName + "_" + today + ".csv"));				
 			
 			for (File country : dir.listFiles()) {
 				if ((!country.getName().equals("collective")) && (!country.getName().equals("summary"))
-						&& (!country.getName().equals("HLAHapV"))) {
+						&& (!country.getName().equals("HLAHapV")) && (!country.getName().equals("haplotype")) &&
+						(!country.getName().equals("FAMCSV"))) {
+
 					if (country.isDirectory()) {
 						for (File famFile : country.listFiles()) {
 							if (famFile.getName().contains("FAM")) {

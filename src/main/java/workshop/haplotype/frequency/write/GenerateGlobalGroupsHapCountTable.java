@@ -33,7 +33,7 @@ public class GenerateGlobalGroupsHapCountTable {
 	public GenerateGlobalGroupsHapCountTable( String filePath, String target, String output ) {
 		// TODO Auto-generated constructor stub
 		CreateDirectoryList cdl = new CreateDirectoryList(filePath);	// generate list of dir (group) & inputfiles
-		SampleHapCount globalshc = new SampleHapCount(cdl.getGlobal(), target);		// collective/FAM_Haplotype_
+		SampleHapCount globalshc = new SampleHapCount(cdl.getGlobalFam(), target);		// global/haplotype/FAM_Haplotype_
 		
 		try {
 			BufferedWriter out = 

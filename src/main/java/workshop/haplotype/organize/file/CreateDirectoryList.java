@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author kazu
- * @version April 5 2018
+ * @author kazu & Matt
+ * @version July 5 2018
  *
  */
 public class CreateDirectoryList {
 	private List<String> dirList;	// directory list => population
 	private List<String> inputFileNameList;	// input file list: AFA/FAM_Haplotype_
-	private String global;	// global input file: collective/FAM_Haplotype_
+	private String globalFam;	// global input file: haplotype/FAM_Haplotype_
 
 	/**
 	 * @param globalDir => full file path to global directory
@@ -26,7 +26,7 @@ public class CreateDirectoryList {
 		// TODO Auto-generated constructor stub
 		dirList = new ArrayList<String>();
 		inputFileNameList = new ArrayList<String>();
-		global = "";
+		globalFam = "";
 		File directory = new File( globalDir );	// create File object in global dir
 		File [] fileList = directory.listFiles();	// generate file list
 		
@@ -34,13 +34,14 @@ public class CreateDirectoryList {
 			if ( file.isDirectory() ) {	// select directory
 				// exclude collective and summary directory
 				if ((!file.getName().equals("collective")) && (!file.getName().equals("summary")) &&
-						!file.getName().equals("HLAHapV")) {
-					dirList.add(file.getName());	// capture all directory, but these two
+						(!file.getName().equals("HLAHapV")) && (!file.getName().equals("haplotype"))
+						&& (!file.getName().equals("FAMCSV"))) {
+					dirList.add(file.getName());	// capture all directory, but these three
 				}		
 			}
 		}
 		
-		for (String dir : dirList) {	// go through directory
+		for (String dir : dirList) {	// go through country directory
 //			System.out.println(dirName + dir);
 			File inside = new File( globalDir + dir );	// full file path
 			File [] inputList = inside.listFiles();
@@ -56,14 +57,15 @@ public class CreateDirectoryList {
 		
 		// TODO:  double check - changing to haplotype
 		//File inside = new File( globalDir + "collective");	// deal with collective directory
-		File inside = new File(globalDir + "collective/haplotype"); // deal with collective/haplotype directory
+//		File inside = new File(globalDir + "collective/haplotype"); // deal with collective/haplotype directory
+		File inside = new File(globalDir + "haplotype"); // deal with haplotype directory
 		File [] inputList = inside.listFiles();
 		for (File input : inputList) {
 			if (input.isFile()) {
 				if (input.getName().contains("FAM_Haplotype_")) {
 					// TODO:  double check - changing to haplotype
 					//global = globalDir + "collective/" + input.getName();
-					global = globalDir + "collective/haplotype/" + input.getName();
+					globalFam = globalDir + "haplotype/" + input.getName();
 				}					
 			}
 		}
@@ -77,16 +79,8 @@ public class CreateDirectoryList {
 		return inputFileNameList;
 	}
 	
-	public String getGlobal() {
-		return global;
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	public String getGlobalFam() {
+		return globalFam;
 	}
 
 }

@@ -9,8 +9,8 @@ import workshop.haplotype.frequency.ranking.HapTarget;
 import workshop.haplotype.write.GenerateFamilyHaplotype;
 
 /**
- * @author kazu
- * @version June 22 2018
+ * @author kazu & Matt
+ * @version July 5 2018
  *
  */
 public class GenerateSixLociHaplotypeTable extends GenerateFamilyHaplotype {
@@ -31,10 +31,10 @@ public class GenerateSixLociHaplotypeTable extends GenerateFamilyHaplotype {
 		new GenerateCountryHapGLstring(global, 
 				haplotype + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		new GenerateCountryHapGLstring(global, 
-				haplotype + "SingleAlleleHapType_Haplotype_Summary_GL_String_" + today + ".csv", 
+				haplotype + "UnambiguousAllele_Haplotype_Summary_GL_String_" + today + ".csv", 
 				fsrc, "SingleAllele", today);
 		new GenerateCountryHapGLstring(global, 
-				haplotype + "TwoFieldAlleleHapType_Haplotype_Summary_GL_String_" + today + ".csv",
+				haplotype + "TwoFieldAllele_Haplotype_Summary_GL_String_" + today + ".csv",
 				fsrc, "TwoFieldAllele", today);
 		
 		HapTarget ht = new HapTarget();

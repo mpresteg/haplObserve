@@ -9,8 +9,8 @@ import workshop.haplotype.frequency.ranking.HapTarget;
 import workshop.haplotype.write.GenerateFamilyHaplotype;
 
 /**
- * @author kazu
- * @version June 22 2018
+ * @author kazu/Matt
+ * @version July 3 2018
  *
  */
 public class GenerateFullHaplotypeFrequencyTable extends GenerateFamilyHaplotype {
@@ -31,14 +31,14 @@ public class GenerateFullHaplotypeFrequencyTable extends GenerateFamilyHaplotype
 		new GenerateCountryHapGLstring(global, 
 				haplotype + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		new GenerateCountryHapGLstring(global, 
-				haplotype + "SingleAlleleHapType_Haplotype_Summary_GL_String_" + today + ".csv", 
-				fsrc, "SingleAllele", today);
+				haplotype + "UnambiguousAllele_Haplotype_Summary_GL_String_" + today + ".csv", 
+				fsrc, "UnambiguousAllele", today);
 		new GenerateCountryHapGLstring(global, 
-				haplotype + "TwoFieldAlleleHapType_Haplotype_Summary_GL_String_" + today + ".csv",
+				haplotype + "TwoFieldAllele_Haplotype_Summary_GL_String_" + today + ".csv",
 				fsrc, "TwoFieldAllele", today);
 		
 		HapTarget ht = new HapTarget();
-		new File(global + "summary").mkdir();	// make FAMCSV dir
+		new File(global + "summary").mkdir();	// make summary dir
 		for (int index = 0; index < ht.getHapTargetList().size(); index++) {	// go through target	
 			System.out.println("Processing: " + ht.getNameList().get(index));
 			String output = global + "summary/Global_" + ht.getNameList().get(index) + "_Haplotype_Summary_" + today + ".csv";

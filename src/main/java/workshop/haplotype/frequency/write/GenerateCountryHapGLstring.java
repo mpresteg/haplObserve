@@ -13,7 +13,7 @@ import workshop.haplotype.organize.file.removeLine.RemoveLine;
 
 /**
  * @author kazu
- * @version June 20 2018
+ * @version June 22 2018
  *
  */
 public class GenerateCountryHapGLstring {
@@ -38,7 +38,9 @@ public class GenerateCountryHapGLstring {
 				}
 								
 				for (String line : rl.getRevisedList()) {
-					if (line.contains(country)) {
+					String [] separated = line.split(",");
+					if (separated[5].equals(country)) {	// fixed bug, but test
+//					if (line.contains(country)) {
 						out.write(line + "\n");						
 					}
 				}

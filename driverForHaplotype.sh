@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$#" -ne 5 ]; then
+if [ "$#" -ne 2 ]; then
   echo "Illegal number of parameters"
 else
   mvn exec:java -Dexec.mainClass="workshop.haplotype.driver.DriverForHaplotype" -Dexec.args="$*"

@@ -1,5 +1,5 @@
 /**
- * create fourth filed haplotype, single allele haplotype & two-filed haplotype
+ * create fourth field haplotype, single allele haplotype & two-filed haplotype
  */
 package workshop.haplotype.organize;
 
@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 import workshop.haplotype.ambiguity.ConvertToSingleAllele;
-import workshop.haplotype.ambiguity.ExtractTwoFiled;
+import workshop.haplotype.ambiguity.ExtractTwoField;
 import workshop.haplotype.family.organize.OrganizeFamilyTrioHapType;
 import workshop.haplotype.gene.OrderedHLAgene;
 
 /**
  * @author kazu
- * @version April 2 2018
+ * @version June 13 2018
  *
  */
 public class CreateHaplotypeGLstring {
@@ -102,16 +102,14 @@ public class CreateHaplotypeGLstring {
 	}
 	
 	public String getTwoFieldAllele(String allele) {
-		ExtractTwoFiled extracted = new ExtractTwoFiled(allele);		// extract two field
+		ExtractTwoField extracted = new ExtractTwoField(allele);		// extract two field
 		int count = 0;
 		String ambiguity = "";
-		for (String str : extracted.getExtractedTwoFieldType()) {
+		for (String str : extracted.getExtractedTwoFieldType().getList()) {
 			if (count > 0) {
 				ambiguity += "/";
 			}
-			else {
-				ambiguity += str;
-			}
+			ambiguity += str;
 			count++;
 		}
 		return ambiguity;

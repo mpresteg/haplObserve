@@ -11,11 +11,12 @@ import java.util.List;
 import java.util.Map;
 
 import workshop.haplotype.organize.NonRedundantList;
-import workshop.haplotype.organize.file.ReadFileOrganizeInList;
+import workshop.haplotype.organize.file.removeLine.RemoveFirstLine;
+import workshop.haplotype.organize.file.removeLine.RemoveLine;
 
 /**
  * @author kazu
- * @version February 13 2018
+ * @version June 25 2018
  *
  */
 public class SampleHap extends SampleHapAbstract {
@@ -33,8 +34,10 @@ public class SampleHap extends SampleHapAbstract {
 		// TODO Auto-generated constructor stub
 		hapFamilyList = new HashMap<String, List<String>>();
 		
-		ReadFileOrganizeInList rf = new ReadFileOrganizeInList(filePath);	// read file		
-		for (String line : rf.getOriginalList()) {		// go through line by line
+		RemoveLine rl = new RemoveFirstLine(filePath);	// see GenerateHaplotypeGLStringSummary
+		for (String line : rl.getRevisedList()) {		
+//		ReadFileOrganizeInList rf = new ReadFileOrganizeInList(filePath);	// read file		
+//		for (String line : rf.getOriginalList()) {		// go through line by line
 
 			String replacedLine = line.replaceAll("NoMatch", "NT");		// this was VERY important line
 			String [] elements = replacedLine.split(",");

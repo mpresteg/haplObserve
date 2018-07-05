@@ -4,10 +4,7 @@
  */
 package workshop.haplotype.driver;
 
-import workshop.haplotype.write.GenerateHaplotypeLog;
 import workshop.haplotype.write.GenerateSampleHaplotype;
-import workshop.haplotype.write.GenerateSampleSingleAlleleHaplotype;
-import workshop.haplotype.write.GenerateSampleTwoFieldHaplotype;
 
 /**
  * @author kazu
@@ -23,9 +20,6 @@ public class DriverForHaplotype {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		new GenerateSampleHaplotype(args[0], args[1]);
-		new GenerateSampleSingleAlleleHaplotype (args[0], args[2]);
-		new GenerateHaplotypeLog(args[0], args[3]);
-		new GenerateSampleTwoFieldHaplotype(args[0], args[4]);
 
 	}
 

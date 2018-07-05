@@ -3,6 +3,7 @@
  */
 package workshop.haplotype.write;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,8 +12,8 @@ import workshop.haplotype.collective.CombineGLFile;
 import workshop.haplotype.collective.FamSamRelationCountry;
 
 /**
- * @author kazu
- * @version June 22 2018
+ * @author kazu & Matt
+ * @version July 5 2018
  *
  */
 public class GenerateFamilyHaplotype {
@@ -29,9 +30,16 @@ public class GenerateFamilyHaplotype {
 		global = global.endsWith("/") ? global : (global + "/");
 
 		collective = global + "collective/"; 
+		File file = new File (collective);
+		if (!file.exists()) {	// check the presence of collective directory
+			System.err.println(file.getAbsolutePath() + "does not exist! Bye!!!");
+			System.exit(1);
+		}
 		CombineGLFile combined = new CombineGLFile(collective);
-		String famcsv = collective+ "FAMCSV/";
-		haplotype = collective + "haplotype/";
+//		String famcsv = collective+ "FAMCSV/";
+		String famcsv = global + "FAMCSV/";		// decided to create this in global
+//		haplotype = collective + "haplotype/";
+		haplotype = global + "haplotype/";		// decided to create this in global
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();		
 		today = dateFormat.format(date);	
@@ -46,8 +54,10 @@ public class GenerateFamilyHaplotype {
 		
 		// moved to haplotype sub-directory to separate files to be checked in from those that are generated
 		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "Validation", fsrc, today);
-		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "SingleAlleleHapType", fsrc, today);
-		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "TwoFieldAlleleHapType", fsrc, today);
+		// modified from SingleAlleleHapType to UnambiguousAllele
+		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "UnambiguousAllele", fsrc, today);
+		//modified from TwoFieldAlleleHapType to TwoFieldAllele
+		new GenerateHaplotypeGLStringSummary(haplotype, haplotype, "TwoFieldAllele", fsrc, today);
 		
 	}
 

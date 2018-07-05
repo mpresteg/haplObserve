@@ -86,7 +86,7 @@ public class RunHaplObserveForMultipleFamilies {
 			if (validation.exists()) {		// copy manually edited file		
 				Path source = FileSystems.getDefault().getPath(collective, "update", 
 						family + "_Validation.txt");
-				Path target = FileSystems.getDefault().getPath(collective, "haplotype", 
+				Path target = FileSystems.getDefault().getPath(haplotype, 
 						family, family + "_Validation.txt");
 				try {
 					Files.copy(source, target);					
@@ -101,8 +101,9 @@ public class RunHaplObserveForMultipleFamilies {
 			}			
 			
 			new GenerateHaplotypeLog(input, haplotype + family + "/" + family + "_Log_" + today + ".log");
+			
 			new GenerateSampleSingleAlleleHaplotype(input, 
-					haplotype + family + "/" + family + "_SingleAlleleHapType_" + today + ".txt");
+					haplotype + family + "/" + family + "_UnambiguousAlleleHapType_" + today + ".txt");
 
 			new GenerateSampleTwoFieldHaplotype(input, 
 					haplotype + family + "/" + family + "_TwoFieldAlleleHapType_" + today + ".txt");				

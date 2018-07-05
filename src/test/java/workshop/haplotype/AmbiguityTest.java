@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import workshop.haplotype.ambiguity.AmbiguityList;
 import workshop.haplotype.ambiguity.CompressAmbiguity;
-import workshop.haplotype.ambiguity.ExtractTwoFiled;
+import workshop.haplotype.ambiguity.ExtractTwoField;
 import workshop.haplotype.ambiguity.FixAmbiguityNumericalOrder;
 import workshop.haplotype.ambiguity.PrioritizePhaseAmbiguity;
 import workshop.haplotype.sirona.RemoveNotation;
@@ -134,43 +134,43 @@ public class AmbiguityTest {
 	
 	
 	@Test	
-	public void testExtractTwoFiled() {
+	public void testExtractTwoField() {
 		System.out.println("ExtractTwoFiled");
-		ExtractTwoFiled extracted = new ExtractTwoFiled("HLA-DRB1*04:07:01/HLA-DRB1*04:92");
-		for (Object str : extracted.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted = new ExtractTwoField("HLA-DRB1*04:07:01/HLA-DRB1*04:92");
+		for (String str : extracted.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);
 			
 		}
 		System.out.println();
 		
-		ExtractTwoFiled extracted1 = new ExtractTwoFiled("HLA-DQB1*03:03:02:01/HLA-DQB1*03:03:02:02/HLA-DQB1*03:03:02:03");
-		for (Object str : extracted1.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted1 = new ExtractTwoField("HLA-DQB1*03:03:02:01/HLA-DQB1*03:03:02:02/HLA-DQB1*03:03:02:03");
+		for (String str : extracted1.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();
 		
-		ExtractTwoFiled extracted2 = new ExtractTwoFiled("HLA-DRB4*01:03:01:01/HLA-DRB4*01:03:01:02N/HLA-DRB4*01:03:01:03");
-		for (Object str : extracted2.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted2 = new ExtractTwoField("HLA-DRB4*01:03:01:01/HLA-DRB4*01:03:01:02N/HLA-DRB4*01:03:01:03");
+		for (String str : extracted2.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();
-		ExtractTwoFiled extracted3 = new ExtractTwoFiled("HLA-DRB4*01:03:01:01/HLA-DRB4*01:03:01:03");
-		for (Object str : extracted3.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted3 = new ExtractTwoField("HLA-DRB4*01:03:01:01/HLA-DRB4*01:03:01:03");
+		for (String str : extracted3.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();
-		ExtractTwoFiled extracted4 = new ExtractTwoFiled("HLA-DRB4*01:03:01:02N");
-		for (Object str : extracted4.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted4 = new ExtractTwoField("HLA-DRB4*01:03:01:02N");
+		for (String str : extracted4.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();
-		ExtractTwoFiled extracted5 = new ExtractTwoFiled("HLA-DPB1*13:01:01/HLA-DPB1*107:01");
-		for (Object str : extracted5.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted5 = new ExtractTwoField("HLA-DPB1*13:01:01/HLA-DPB1*107:01");
+		for (String str : extracted5.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();
-		ExtractTwoFiled extracted6 = new ExtractTwoFiled("HLA-DPB1*107:01/HLA-DPB1*13:01:01");
-		for (Object str : extracted6.getExtractedTwoFieldType().toArray()) {
+		ExtractTwoField extracted6 = new ExtractTwoField("HLA-DPB1*107:01/HLA-DPB1*13:01:01");
+		for (String str : extracted6.getExtractedTwoFieldType().getList()) {
 			System.out.println(str);			
 		}
 		System.out.println();

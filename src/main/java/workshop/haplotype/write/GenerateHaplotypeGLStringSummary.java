@@ -14,7 +14,7 @@ import workshop.haplotype.collective.FamSamRelationCountry;
 
 /**
  * @author kazu
- * @version June 19 2018
+ * @version June 26 2018
  *
  */
 public class GenerateHaplotypeGLStringSummary {
@@ -35,9 +35,13 @@ public class GenerateHaplotypeGLStringSummary {
 		try {	
 			BufferedWriter out = 
 				new BufferedWriter(new FileWriter(outPath + name + "_Haplotype_Summary_GL_String_" + today + ".csv"));
-			if (!name.equals("FAM")) {	// no header for this file
-				out.write("Family_ID,Sample_ID,Relation,GL_String,Validation,Ethnicity/Country\n");
-			}		
+			// add header
+			// Requires header for pould
+			// also see SampleHap
+			// "Gl String" is very specific to pould, e.g., GL_String does not work
+//			if (!name.equals("FAM")) {	// no header for this file
+				out.write("Family_ID,Sample_ID,Relation,Gl String,Validation,Ethnicity/Country\n");
+//			}		
 
 			for (File dir : hap.listFiles()) {	// haplotype
 				if (dir.isDirectory()) {

@@ -13,7 +13,7 @@ import workshop.haplotype.organize.file.ChooseElementHapType;
 
 /**
  * @author kazu
- * @version March 8 2018
+ * @version July 5 2018
  *
  */
 public class GenerateSampleSingleAlleleHaplotype {
@@ -44,7 +44,7 @@ public class GenerateSampleSingleAlleleHaplotype {
 				for (String parent : oh.getParentList()) {
 					// do not print if there is only one haplotype present
 					// this happens when one parents haplotype was imputed from a single child, trio family
-					// this created a problem when LD was calculated using Steve's script
+					// this created a problem when LD was calculated using pould
 					if (oh.getSingleAlleleHaplotypeMapList().get(child).get(parent).size() == 2) {
 						out.write(parent + "\t" + oh.getParentValidation().get(parent)+ "\t");// added on September 8 2016
 						int index = 0;
