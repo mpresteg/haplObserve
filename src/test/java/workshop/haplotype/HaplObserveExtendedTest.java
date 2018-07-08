@@ -4,8 +4,10 @@
 package workshop.haplotype;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -57,29 +59,45 @@ public class HaplObserveExtendedTest extends TestCase {
 		
 		// test SeparateHapAndAllele
 		File hap = new File(haplotype);
-		for (File file : hap.listFiles()) {
-			if (file.isDirectory()) {
-				String fam = file.getAbsolutePath();	// family dir
-				File glFile = new File(fam);
-				for (File test : glFile.listFiles()) {	// list of files in family
-					if (test.getName().contains("Validation")) {
-						System.out.println(test.getAbsolutePath());
-						SeparateHapAndAllele saa = new SeparateHapAndAllele(test.getAbsolutePath(), fsrc);
-													
-						for (List<String> list : saa.getFamSamRelationHapCountry()) {	
-							for (int count = 0; count < 2; count++) {	// family, sample, relation
-								for (int index = 0; index < 3; index++) {
-									System.out.println(list.get(index) + ",");										
-								}
-								for (String type : saa.getSampleAllele().get(list.get(1)).get(count)) {
-									System.out.println(type + ",");
-								}
-								System.out.println(list.get(4) + ",");	// validation
-								System.out.println(list.get(5) + "\n");	// country
-							}							
-						}	
-					}
+		assertTrue(hap.isDirectory());
+		
+		File[] famFiles = hap.listFiles(new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                return pathname.getName().startsWith("FAM") 
+                    && pathname.isDirectory();
+            }
+        });
+		
+		// Expecting FAM0001, FAM0002, FAM0003, FAM0009, FAM0013, FAM0222
+		assertTrue(famFiles.length == 6);
+		
+		for (File famFile : famFiles) {
+			File[] validationFiles = famFile.listFiles(new FileFilter() {
+				@Override
+				public boolean accept(File pathname) {
+					return pathname.getName().contains("Validation");
 				}
+			});
+			
+			// Expecting at least one validation file...multiple if test directories not cleaned between runs...
+			assertTrue(validationFiles.length >= 1);
+			
+			// Since inputs are always the same...just check the first one - outputs should be the same
+			
+			System.out.println(validationFiles[0].getAbsolutePath());
+			SeparateHapAndAllele saa = new SeparateHapAndAllele(validationFiles[0].getAbsolutePath(), fsrc);
+			
+			assertNotNull(saa);
+							
+			switch (famFile.getName()) {
+				case "FAM0001": validateFamSamRelation(saa, true, "OTHER"); break;
+				case "FAM0002": validateFamSamRelation(saa, true, "EUR"); break;
+				case "FAM0003": validateFamSamRelation(saa, true, "HIS"); break;
+				case "FAM0009": validateFamSamRelation(saa, true, "ASI"); break;
+				case "FAM0013": validateFamSamRelation(saa, true, "AFA"); break;
+				case "FAM0222": validateFamSamRelation(saa, false, "EUR"); break;
+				default: fail("Unexpected Family: " + famFile.getName()); break;
 			}
 		}
 		
@@ -130,6 +148,11 @@ public class HaplObserveExtendedTest extends TestCase {
 		
 		
 		CreateDirectoryList cdl = new CreateDirectoryList(global);
+		
+		// Expecting EUR, HIS, OTHER, ASI, AFA
+		List<String> expectedCountries = Arrays.asList("EUR", "HIS", "OTHER", "ASI", "AFA");
+		assertTrue(cdl.getDirList().containsAll(expectedCountries));
+		
 		for (String str : cdl.getDirList()) {
 			System.out.println(str);
 		}
@@ -152,6 +175,28 @@ public class HaplObserveExtendedTest extends TestCase {
 					ht.getNameList().get(index), today);	
 		}
 		
+	}
+
+	public void validateFamSamRelation(SeparateHapAndAllele saa, boolean validExpectation, String countryExpectation) {
+		for (List<String> list : saa.getFamSamRelationHapCountry()) {	
+			for (int count = 0; count < 2; count++) {	// family, sample, relation
+				for (int index = 0; index < 3; index++) {
+					System.out.println(list.get(index) + ",");										
+				}
+				for (String type : saa.getSampleAllele().get(list.get(1)).get(count)) {
+					System.out.println(type + ",");
+				}
+				
+				Boolean valid = new Boolean(list.get(4)); // validation
+				assertTrue(valid == validExpectation);
+				System.out.println(valid + ",");
+				
+				String country = list.get(5); // country
+				
+				assertTrue(country.equals(countryExpectation));
+				System.out.println(country + "\n");	
+			}							
+		}
 	}
 
 

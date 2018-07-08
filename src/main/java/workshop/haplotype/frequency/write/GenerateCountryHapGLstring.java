@@ -39,8 +39,7 @@ public class GenerateCountryHapGLstring {
 								
 				for (String line : rl.getRevisedList()) {
 					String [] separated = line.split(",");
-					if (separated[5].equals(country)) {	// fixed bug, but test
-//					if (line.contains(country)) {
+					if (separated[5].equals(country)) {	// bug fixed 
 						out.write(line + "\n");						
 					}
 				}

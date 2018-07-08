@@ -36,9 +36,7 @@ public class GenerateFamilyHaplotype {
 			System.exit(1);
 		}
 		CombineGLFile combined = new CombineGLFile(collective);
-//		String famcsv = collective+ "FAMCSV/";
 		String famcsv = global + "FAMCSV/";		// decided to create this in global
-//		haplotype = collective + "haplotype/";
 		haplotype = global + "haplotype/";		// decided to create this in global
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date = new Date();		

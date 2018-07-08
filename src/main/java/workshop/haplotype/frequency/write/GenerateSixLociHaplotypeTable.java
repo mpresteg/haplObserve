@@ -22,8 +22,6 @@ public class GenerateSixLociHaplotypeTable extends GenerateFamilyHaplotype {
 		super(global);
 		// INFO:  CHanging this to the haplotype directory to explicitly separate input files from generated output files - so that output files are not checked into source control
 		// TODO: double-check
-		//new GenerateCountryHapGLstring(global, 
-		//			collective + "FAM_Haplotype_Summary_GL_String_" + today + ".csv", fsrc, "FAM", today);
 		
 		// better handling for directories when trailing slash not provided
 		global = global.endsWith("/") ? global : (global + "/");

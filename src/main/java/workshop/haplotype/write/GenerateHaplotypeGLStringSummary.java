@@ -39,9 +39,8 @@ public class GenerateHaplotypeGLStringSummary {
 			// Requires header for pould
 			// also see SampleHap
 			// "Gl String" is very specific to pould, e.g., GL_String does not work
-//			if (!name.equals("FAM")) {	// no header for this file
-				out.write("Family_ID,Sample_ID,Relation,Gl String,Validation,Ethnicity/Country\n");
-//			}		
+			out.write("Family_ID,Sample_ID,Relation,Gl String,Validation,Ethnicity/Country\n");
+
 
 			for (File dir : hap.listFiles()) {	// haplotype
 				if (dir.isDirectory()) {
