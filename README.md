@@ -1,11 +1,18 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
 Installation and Execution:
+ - Install JDK (written for 1.8)
+ - Download Maven (https://maven.apache.org/download.cgi)
+ - Install Maven (https://maven.apache.org/install.html, or useful instruction for Windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/) 
+ - Confirm correct installation by: mvn -version
+ - It is important to set JAVA_HOME and PATH environments correctly.
+ 
  - Install Git (https://git-scm.com/downloads)
- - Clone the repository
- - Install Java (written for 1.8)
- - Install Maven (configured for 3.3.3)
- - Run ‘mvn clean package’ from the root of the haplObserve cloned (local) repository
+ - Open terminal (use Git Bash terminal for Windows)
+ - Change directory where haplObserve should be cloned, e.g., "cd" will change to your home directory
+ - Clone the repository: git clone https://github.com/IHIW/haplObserve.git
+ - When haploObserve is cloned in home (~): cd haplObserve (go inside of haplObserve directory)
+ - From the root of the haplObserve cloned (local) repository: mvn clean install
  
  
 Prerequisite:
