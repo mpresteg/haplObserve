@@ -1,6 +1,6 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
-Installation and Execution:
+# Installation and Execution:
  - Install JDK (written for 1.8)
  - Download Maven (https://maven.apache.org/download.cgi)
  - Install Maven (https://maven.apache.org/install.html, or useful instruction for Windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/) 
@@ -15,7 +15,7 @@ Installation and Execution:
  - From the root of the haplObserve cloned (local) repository: mvn clean install
  
  
-Prerequisite:
+# Prerequisite:
   - HaplObserve requires the following:
   - “global/collective/” directory structure. The “global” directory name can be anything, such as resource, but “collective” directory name must be used.
 
@@ -32,17 +32,17 @@ Prerequisite:
  - newly generated directories should be deleted or moved to other place.
  
  
- Script1:
+ # Script1:
  - driverForHaplotype.sh &lt;inputFile> &lt;sampleHapOutFile>
  - Takes spreadsheet format input file.
  - This is convenient to build haplotype from a single family
  
- Script2:
+ # Script2:
  - driverForGenerateFamilyHaplotype.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families
  - This does NOT calculate haplotype frequencies
   
- Script3:
+ # Script3:
  - driverForGenerateFullHaplotypeFrequencyTable.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families (same as option1)
  - Separate haplotypes by ethnicity/country
@@ -50,7 +50,7 @@ Prerequisite:
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
  - Generates haplotype frequency table that can be used as reference table for HLAHapV  
   
- Script4:  
+ # Script4:  
  - driverForGenerateSixLociHaplotypeTable.sh &lt;workingDirectory>
  - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
  - Generates haplotypes from multiple families (same as option1&2)
