@@ -33,17 +33,17 @@
  
  
  # Script1:
- * driverForHaplotype.sh &lt;inputFile> &lt;sampleHapOutFile>
+ 1. driverForHaplotype.sh &lt;inputFile> &lt;sampleHapOutFile>
  - Takes spreadsheet format input file.
  - This is convenient to build haplotype from a single family
  
  # Script2:
- * driverForGenerateFamilyHaplotype.sh &lt;workingDirectory>
+ 2. driverForGenerateFamilyHaplotype.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families
  - This does NOT calculate haplotype frequencies
   
  # Script3:
- * driverForGenerateFullHaplotypeFrequencyTable.sh &lt;workingDirectory>
+ 3. driverForGenerateFullHaplotypeFrequencyTable.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families (same as option1)
  - Separate haplotypes by ethnicity/country
  - Calculates haplotype frequencies for 11 HLA loci (HLA-A, HLA-C, HLA-B, HLA-DRB3/4/5, HLA-DRB1, HLA-DQA1, HLA-DQB1, HLA-DPA1 and HLA-DPB1)
@@ -51,7 +51,7 @@
  - Generates haplotype frequency table that can be used as reference table for HLAHapV  
   
  # Script4:
- * driverForGenerateSixLociHaplotypeTable.sh &lt;workingDirectory>
+ 4. driverForGenerateSixLociHaplotypeTable.sh &lt;workingDirectory>
  - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
  - Generates haplotypes from multiple families (same as option1&2)
  - Separate haplotypes by ethnicity/country (same as option2)
