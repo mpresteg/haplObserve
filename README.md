@@ -32,17 +32,17 @@ Prerequisite:
  - newly generated directories should be deleted or moved to other place.
  
  
- Scripts:
+ Script1:
  - driverForHaplotype.sh &lt;inputFile> &lt;sampleHapOutFile>
  - Takes spreadsheet format input file.
  - This is convenient to build haplotype from a single family
  
- 
+ Script2:
  - driverForGenerateFamilyHaplotype.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families
  - This does NOT calculate haplotype frequencies
   
- 
+ Script3:
  - driverForGenerateFullHaplotypeFrequencyTable.sh &lt;workingDirectory>
  - Generates haplotypes from multiple families (same as option1)
  - Separate haplotypes by ethnicity/country
@@ -50,7 +50,7 @@ Prerequisite:
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
  - Generates haplotype frequency table that can be used as reference table for HLAHapV  
   
-  
+ Script4:  
  - driverForGenerateSixLociHaplotypeTable.sh &lt;workingDirectory>
  - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
  - Generates haplotypes from multiple families (same as option1&2)
