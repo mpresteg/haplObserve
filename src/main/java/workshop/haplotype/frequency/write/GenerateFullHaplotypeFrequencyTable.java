@@ -35,12 +35,18 @@ public class GenerateFullHaplotypeFrequencyTable extends GenerateFamilyHaplotype
 				haplotype + "TwoFieldAllele_Haplotype_Summary_GL_String_" + today + ".csv",
 				fsrc, "TwoFieldAllele", today);
 		
-		HapTarget ht = new HapTarget();
+		HapTarget ht = new HapTarget();		// LOOK INTO HERE
 		new File(global + "summary").mkdir();	// make summary dir
 		for (int index = 0; index < ht.getHapTargetList().size(); index++) {	// go through target	
 			System.out.println("Processing: " + ht.getNameList().get(index));
-			String output = global + "summary/Global_" + ht.getNameList().get(index) + "_Haplotype_Summary_" + today + ".csv";
-
+			String output = "";
+			if (ht.getNameList().get(index).contains("HLA-")) {	// locus
+				output = global + "summary/Global_" + ht.getNameList().get(index) + "_Locus_Summary_" + today + ".csv";
+			}
+			else {
+				output = global + "summary/Global_" + ht.getNameList().get(index) + "_Haplotype_Summary_" + today + ".csv";
+			}
+			
 			new GenerateGlobalGroupsHapCountTable(global, 
 					ht.getHapTargetList().get(index), output);
 			
