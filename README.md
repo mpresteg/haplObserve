@@ -59,6 +59,9 @@
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
  - Generates haplotype frequency table that can be used as reference table for HLAHapV
  
+ # Goals
+  - Make command line tools and releaseable zip files
+ 
 
 
 
