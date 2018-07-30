@@ -1,0 +1,11 @@
+Package: [[name]]
+Version: [[version]]
+Section: misc
+Architecture: all
+Depends: openjdk-7-jre-headless
+Priority: extra
+Replaces: hapl-obs-tools
+Maintainer: Matt Prestegaard <mpresteg@nmdp.org>
+Homepage: https://github.com/ihiw/haplObserve
+Description: Haplotype Observation Software
+Distribution: development

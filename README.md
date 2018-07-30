@@ -1,6 +1,17 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
-# Installation and Execution:
+# Using the software:
+
+The ability to download the software package and make use of command line tools is available.
+
+From the Releases section of GitHub you may grab the snapshot of the latest release.  E.g:  hapl-obs-tools-0.0.1-SNAPSHOT-bin.zip from a given release at [Releases](https://github.com/ihiw/haplObserve/releases)
+
+After un-zipping the software, you may run either:
+ - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-driver -h OR
+ - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-table-driver -h
+for instructions on how to run the software.
+
+# (Alternative) Installation and Execution:
  - Install JDK (written for 1.8)
  - Download Maven (https://maven.apache.org/download.cgi)
  - Install Maven (https://maven.apache.org/install.html, or useful instruction for Windows: https://www.mkyong.com/maven/how-to-install-maven-in-windows/) 
@@ -32,26 +43,22 @@
  - newly generated directories should be deleted or moved to other place.
  
  
- # Script1:
- 1. driverForHaplotype.sh &lt;inputFile> &lt;sampleHapOutFile>
+ # haplotype-driver -i &lt;inputFile> -o &lt;outputFile>
  - Takes spreadsheet format input file.
  - This is convenient to build haplotype from a single family
  
- # Script2:
- 2. driverForGenerateFamilyHaplotype.sh &lt;workingDirectory>
+ # haplotype-table-driver -b &lt;baseDirectory> -fam
  - Generates haplotypes from multiple families
  - This does NOT calculate haplotype frequencies
   
- # Script3:
- 3. driverForGenerateFullHaplotypeFrequencyTable.sh &lt;workingDirectory>
+ # haplotype-table-driver -b &lt;baseDirectory> -full
  - Generates haplotypes from multiple families (same as option1)
  - Separate haplotypes by ethnicity/country
  - Calculates haplotype frequencies for 11 HLA loci (HLA-A, HLA-C, HLA-B, HLA-DRB3/4/5, HLA-DRB1, HLA-DQA1, HLA-DQB1, HLA-DPA1 and HLA-DPB1)
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
  - Generates haplotype frequency table that can be used as reference table for HLAHapV  
   
- # Script4:
- 4. driverForGenerateSixLociHaplotypeTable.sh &lt;workingDirectory>
+  # haplotype-table-driver -b &lt;baseDirectory> -six
  - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
  - Generates haplotypes from multiple families (same as option1&2)
  - Separate haplotypes by ethnicity/country (same as option2)
