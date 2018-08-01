@@ -1,5 +1,26 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
+
+ 
+# Prerequisite:
+  # HaplObserve requires the following:
+  - Download and Install Java Development Kit (JDK)
+  
+  - “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used.
+
+  - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
+
+  - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. 
+
+ - The category should be included in the first line as a header.
+
+ - Six example of gl_strings files are included (hapl-obs/src/test/resources/collective).
+ 
+ - if HaplObserve builds incorrect haplotypes after initial trial, manually edited haplotypes can be saved in &lt;baseDirectory>/collective/update. The manually edited files is used as final results.
+ 
+ - newly generated directories should be deleted or moved to other place.
+ 
+ 
 # Using the software:
 
 The ability to download the software package and make use of command line tools is available.
@@ -10,22 +31,6 @@ After un-zipping the software, you may run either:
  - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-driver -h OR
  - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-table-driver -h
 for instructions on how to run the software.
- 
-# Prerequisite:
-  # HaplObserve requires the following:
-  - “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used.
-
-  - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
-
-  - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. 
-
- - The category should be included in the first line as a header.
-
- - Six example of gl_strings files are included.
- 
- - if HaplObserve builds incorrect haplotypes after initial trial, manually edited haplotypes can be saved in &lt;baseDirectory>/collective/update. The manually edited files is used as final results.
- 
- - newly generated directories should be deleted or moved to other place.
  
  
  # haplotype-driver -i &lt;inputFile> -o &lt;outputFile>
