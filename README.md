@@ -14,6 +14,7 @@ for instructions on how to run the software.
  
 # Prerequisite:
   # HaplObserve requires the following:
+  - Download and Install Java Development Kit (JDK - 1.7)
   - “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used.
 
   - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
