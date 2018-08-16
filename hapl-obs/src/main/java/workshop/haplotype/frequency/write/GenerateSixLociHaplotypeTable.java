@@ -39,9 +39,10 @@ public class GenerateSixLociHaplotypeTable extends GenerateFamilyHaplotype {
 		new File(global + "summary").mkdir();	// make FAMCSV dir
 		for (int index = 0; index < ht.getHapSixTargetList().size(); index++) {	// go through target	
 			System.out.println("Processing: " + ht.getSixNameList().get(index));
+
 			String output = "";
 			if (ht.getNameList().get(index).contains("HLA-")) {	// locus
-				String output = global + "summary/Global_" + ht.getSixNameList().get(index) + "_Locus_Summary_" + today + ".csv";
+				output = global + "summary/Global_" + ht.getSixNameList().get(index) + "_Locus_Summary_" + today + ".csv";
 			}
 			else {
 				output = global + "summary/Global_" + ht.getSixNameList().get(index) + "_Haplotype_Summary_" + today + ".csv";
