@@ -28,9 +28,9 @@ public abstract class AmbiguityListAbstract {
 		alleleList.add(addList(dpb1_1301));		
 		String [] dpb1_0401 = {"HLA-DPB1*04:01:01:01", "HLA-DPB1*04:01:01:02"};
 		alleleList.add(addList(dpb1_0401));		
-		String [] dpb1_020102 = {"HLA-DPB1*02:01:02", "HLA-DPB1*02:01:19"};
-		alleleList.add(addList(dpb1_020102));		
-		String [] dqa1_0101 = {"HLA-DQA1*01:01:01:02", "HLA-DQA1*01:01:01:03"};
+//		String [] dpb1_020102 = {"HLA-DPB1*02:01:02", "HLA-DPB1*02:01:19"};
+//		alleleList.add(addList(dpb1_020102));		
+		String [] dqa1_0101 = {"HLA-DQA1*01:01:01:01", "HLA-DQA1*01:01:01:02", "HLA-DQA1*01:01:01:03"};	// added HLA-DQA1*01:01:01:01
 		alleleList.add(addList(dqa1_0101));
 		String [] dqa1_01020101 = {"HLA-DQA1*01:02:01:01", "HLA-DQA1*01:02:01:03", "HLA-DQA1*01:02:01:05"};
 		alleleList.add(addList(dqa1_01020101));		
@@ -40,7 +40,7 @@ public abstract class AmbiguityListAbstract {
 		alleleList.add(addList(dqa1_010301));
 		String [] dqa1_0201 = {"HLA-DQA1*02:01:01:01", "HLA-DQA1*02:01:01:02"};	// added April 27 2017
 		alleleList.add(addList(dqa1_0201));		
-		String [] dqa1_0104 = {"HLA-DQA1*01:04:01:01", "HLA-DQA1*01:04:01:02"};
+		String [] dqa1_0104 = {"HLA-DQA1*01:04:01:01", "HLA-DQA1*01:04:01:02", "HLA-DQA1*01:04:01:04"}; // HLA-DQA1*01:04:01:04
 		alleleList.add(addList(dqa1_0104));
 		String [] dqb1_0303 = {"HLA-DQB1*03:03:02:02", "HLA-DQB1*03:03:02:03"};
 		alleleList.add(addList(dqb1_0303));		
