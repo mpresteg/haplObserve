@@ -43,7 +43,7 @@ for instructions on how to run the software.
  - Separate haplotypes by ethnicity/country
  - Calculates haplotype frequencies for 11 HLA loci (HLA-A, HLA-C, HLA-B, HLA-DRB3/4/5, HLA-DRB1, HLA-DQA1, HLA-DQB1, HLA-DPA1 and HLA-DPB1)
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
- - Generates haplotype frequency table that can be used as reference table for HLAHapV  
+ - Generates haplotype frequency table that can be used as reference table for HLAHapV [1]
   
   # haplotype-table-driver -b &lt;baseDirectory> -six
  - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
@@ -53,6 +53,8 @@ for instructions on how to run the software.
  - Generate summary table that contains haplotype frequencies from all ethnicity/country in a single spreadsheet
  - Generates haplotype frequency table that can be used as reference table for HLAHapV
  
+# Test / Example Files:
+ - Test / example files (which the JUnit tests make use of) can be found at hapl-obs/src/test/resources (csv files and the collective directory)
 
 # (Alternative) Installation and Execution:
  - Install JDK (written for 1.8)
@@ -67,3 +69,7 @@ for instructions on how to run the software.
  - Clone the repository: git clone https://github.com/IHIW/haplObserve.git
  - When haploObserve is cloned in home (~): cd haplObserve (go inside of haplObserve directory)
  - From the root of the haplObserve cloned (local) repository: mvn clean install 
+ 
+# References:
+1.  K. Osoegawa et al., HLA Haplotype Validator for quality assessments of HLA typing, Hum. Immunol. (2015),
+[http://dx.doi.org/10.1016/j.humimm.2015.10.018](http://dx.doi.org/10.1016/j.humimm.2015.10.018)

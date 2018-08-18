@@ -11,6 +11,13 @@
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
+      <resource>
+        <directory>src/test/resources</directory>
+        <includes>
+          <include>collective</include>
+          <include>*.csv</include>
+        </includes>
+      </resource>
     </resources>
     <plugins>
       <plugin>
