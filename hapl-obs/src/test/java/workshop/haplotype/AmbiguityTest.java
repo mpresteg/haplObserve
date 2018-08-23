@@ -39,7 +39,7 @@ public class AmbiguityTest {
 		amList.convertToAmbiguityString("HLA-DPB1*13:01:01");
 		System.out.println(amList.getConverted());
 		
-		amList.convertToAmbiguityString("HLA-DPB1*02:01:19");
+		amList.convertToAmbiguityString("HLA-DQA1*01:04:01:02");
 		System.out.println(amList.getConverted());
 		
 		amList.convertToAmbiguityString("HLA-DRB1*03:01:01:01");

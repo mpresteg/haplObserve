@@ -28,8 +28,8 @@ public abstract class AmbiguityListAbstract {
 		alleleList.add(addList(dpb1_1301));		
 		String [] dpb1_0401 = {"HLA-DPB1*04:01:01:01", "HLA-DPB1*04:01:01:02"};
 		alleleList.add(addList(dpb1_0401));		
-		String [] dpb1_020102 = {"HLA-DPB1*02:01:02"};	// removed "HLA-DPB1*02:01:19"
-		alleleList.add(addList(dpb1_020102));	
+//		String [] dpb1_020102 = {"HLA-DPB1*02:01:02"};	// removed "HLA-DPB1*02:01:19"
+//		alleleList.add(addList(dpb1_020102));	
 		
 		String [] dqa1_0101 = {"HLA-DQA1*01:01:01:02", "HLA-DQA1*01:01:01:03"};	// need to add HLA-DQA1*01:01:01:01
 		alleleList.add(addList(dqa1_0101));
