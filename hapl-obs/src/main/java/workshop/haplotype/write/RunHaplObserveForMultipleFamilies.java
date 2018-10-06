@@ -16,6 +16,7 @@ import workshop.haplotype.collective.CombineGLFile;
 import workshop.haplotype.collective.ExtractFamily;
 import workshop.haplotype.collective.FamSamRelationGenotype;
 import workshop.haplotype.gene.HLAgene;
+import workshop.haplotype.update.UpdateHaplotypes;
 import workshop.haplotype.utilities.FileUtilities;
 
 /**
@@ -79,8 +80,10 @@ public class RunHaplObserveForMultipleFamilies {
 			
 			String input = famcsv + family + ".csv";			
 			// check for manually edited haplotype file in update directory
-			File validation = new File(collective + "update/" + family + "_Validation.txt");
+			String validFile = collective + "update/" + family + "_Validation.txt";
+			File validation = new File(validFile);
 			if (validation.exists()) {		// copy manually edited file		
+				new UpdateHaplotypes(validFile, validFile);
 				Path source = FileSystems.getDefault().getPath(collective, "update", 
 						family + "_Validation.txt");
 				Path target = FileSystems.getDefault().getPath(haplotype, 

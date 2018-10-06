@@ -1,34 +1,37 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
-# Using the software:
 
-The ability to download the software package and make use of command line tools is available.
-
-From the Releases section of GitHub you may grab the snapshot of the latest release.  E.g:  hapl-obs-tools-0.0.1-SNAPSHOT-bin.zip from a given release at [Releases](https://github.com/ihiw/haplObserve/releases)
-
-After un-zipping the software, you may run either:
- - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-driver -h OR
- - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-table-driver -h
-for instructions on how to run the software.
-
- 
 # Prerequisite:
   # HaplObserve requires the following:
-  - Download and Install Java Development Kit (JDK - 1.7)
-  - “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used.
+ - For Windows computer, we recommend to install Git Bash terminal (https://git-scm.com/download/win). Git Bash terminal allows to use the same way as Linux and Mac terminals
+  
+ - Download and Install Java SE Development Kit (JDK - 1.7 or newer)
+  
+ - Create “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used. Do not use space in &lt;baseDirectory> name.
 
-  - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
+ - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
 
-  - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. 
+ - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. 
 
  - The category should be included in the first line as a header.
 
  - Six example of gl_strings files are included (hapl-obs/src/test/resources/collective).
  
- - if HaplObserve builds incorrect haplotypes after initial trial, manually edited haplotypes can be saved in &lt;baseDirectory>/collective/update. The manually edited files is used as final results.
+ - If HaplObserve builds incorrect haplotypes after initial trial, manually edited haplotypes can be saved in &lt;baseDirectory>/collective/update. The manually edited files is used as final results.
  
- - newly generated directories should be deleted or moved to other place.
+ - Newly generated directories should be deleted or moved to other place after each run.
  
+ # Using the software:
+
+The ability to download the software package and make use of command line tools is available.
+
+ - From the Releases section of GitHub, download one of the snapshots of the latest release.  E.g:  hapl-obs-tools-0.0.1-SNAPSHOT-bin.zip from a given release at [Releases](https://github.com/ihiw/haplObserve/releases)
+ - Unzip the software package
+
+After un-zipping the software, test the following commands for instructions on how to run the software:
+ - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-driver -h
+ - ./hapl-obs-tools-0.0.1-SNAPSHOT/bin/haplotype-table-driver -h
+ - Description of these commands can be found below
  
  # haplotype-driver -i &lt;inputFile> -o &lt;outputFile>
  - Takes spreadsheet format input file.
@@ -46,7 +49,7 @@ for instructions on how to run the software.
  - Generates haplotype frequency table that can be used as reference table for HLAHapV [1]
   
   # haplotype-table-driver -b &lt;baseDirectory> -six
- - use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
+ - Use this when genotypes for HLA-DRB3/4/5, HLA-DQA1 and HLA-DPA1 are not available. 
  - Generates haplotypes from multiple families (same as option1&2)
  - Separate haplotypes by ethnicity/country (same as option2)
  - Calculates haplotype frequencies for 6 HLA loci (HLA-A, HLA-C, HLA-B, HLA-DRB1, HLA-DQB1, HLA-DPB1)
