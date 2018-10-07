@@ -16,6 +16,9 @@ import workshop.haplotype.organize.file.ChooseElement;
  */
 public class OrganizeParentHapTypeValidated extends
 		OrganizeParentHapTypeDRBlinkage {
+	// Key1: child
+	// Key2: Parents
+	// Key3: gene
 	private Map<String, Map<String, Map<String, Boolean>>> validatedParentMap;
 
 

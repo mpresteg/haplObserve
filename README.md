@@ -1,5 +1,11 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
+# Introduction:
+HaplObserve builds classical HLA gene haplotypes from genotypes of nuclear families that consists of two parents and at least one child. When one family has multiple children, parental haplotypes are validated.
+
+When multiple families are present in the data set, haplObserve includes an option to separate the parents by ethnicity or country, and calculates haplotype frequencies per ethnicity or country. Full haplotypes are separated into predefined smaller haplotypes and loci, and haplotype/allele frequencies are calculated. Parents are treated as unrelated individuals, while children are not included in the estimation of haplotype frequencies.
+
+
 
 # Prerequisite:
   # HaplObserve requires the following:
@@ -8,12 +14,24 @@
  - Download and Install Java SE Development Kit (JDK - 1.7 or newer)
   
  - Create “&lt;baseDirectory>/collective/” directory structure. The &lt;baseDirectory> name can be anything, such as resource, but “collective” directory name must be used. Do not use space in &lt;baseDirectory> name.
+ 
+# Input files
 
  - “gl_strings_XXX.csv” files should be stored under “&lt;baseDir>/collective/gl_strings_XXX.csv. The software looks for “gl_strings” to identify files to be used. Multiple families can be included in a single file. If multiple files exist, the software combines them.
+ - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. These categories should be included in the first line as a header.
+ 
+ 
+ 
+ 
+ - Alternatively, the software will generate a "gl_strings_XXX.csv" file based upon standard inputs:
+     - [.hml](http://bioinformatics.bethematchclinical.org/hla-resources/hml) - standard format for submission of genotype data
+     - [.ped](http://valdarlab.unc.edu/pedformat.html) - standard format for expressing pedigree information
+     - *INFO*.csv - custom format for expressing correlating Labcode and ethnicity/contry information to an individual.
+     - The software looks for "INFO" in file name to identify *INFO*.csv file.
+     - The *INFO*.csv file contains: Sample ID, Labcode and ethnicity/country information. Do not include header in *INFO*.csv file.
+     - The software will look for individuals across all three of these files and combine the information into the "gl_strings_xxx.csv" format.
 
- - The “gl_strings” file contains the following information: Labcode, Family ID, Sample ID, Relation, Gl String, Ethnicity/Country. 
 
- - The category should be included in the first line as a header.
 
  - Six example of gl_strings files are included (hapl-obs/src/test/resources/collective).
  
@@ -21,7 +39,7 @@
  
  - Newly generated directories should be deleted or moved to other place after each run.
  
- # Using the software:
+# Using the software:
 
 The ability to download the software package and make use of command line tools is available.
 
