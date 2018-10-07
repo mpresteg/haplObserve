@@ -1,15 +1,14 @@
 [![Build Status](https://api.travis-ci.org/mpresteg/haplObserve.svg?branch=master)](https://travis-ci.org/mpresteg/haplObserve)
 
 # Introduction:
-HaplObserve builds classical HLA gene haplotypes from genotypes of nuclear families that consists of two parents and at least one child. When one family has multiple children, parental haplotypes are validated.
+HaplObserve builds classical HLA gene haplotypes from genotypes of nuclear families that consist of two parents and at least one child. When one family has multiple children, parental haplotypes are validated.
 
-When multiple families are present in the data set, haplObserve includes an option to separate the parents by ethnicity or country, and calculates haplotype frequencies per ethnicity or country. Full haplotypes are separated into predefined smaller haplotypes and loci, and haplotype/allele frequencies are calculated. Parents are treated as unrelated individuals, while children are not included in the estimation of haplotype frequencies.
+When multiple families are present in the dataset, haplObserve includes an option to separate the parents by ethnicity or country, and calculates haplotype frequencies per ethnicity or country. Full haplotypes are separated into predefined smaller haplotypes and individual loci, and haplotype or allele frequencies are calculated. Parents are treated as unrelated individuals, while children are not included in the estimation of haplotype frequencies.
 
 
 
 # Prerequisite:
-  # HaplObserve requires the following:
- - For Windows computer, we recommend to install Git Bash terminal (https://git-scm.com/download/win). Git Bash terminal allows to use the same way as Linux and Mac terminals
+ - For Windows computers, we recommend installing the Git Bash terminal (https://git-scm.com/download/win). The Git Bash terminal allows HaplObserve to be run the same way as in Linux and Mac terminals
   
  - Download and Install Java SE Development Kit (JDK - 1.7 or newer)
   
@@ -30,6 +29,7 @@ When multiple families are present in the data set, haplObserve includes an opti
      - The software looks for "INFO" in file name to identify *INFO*.csv file.
      - The *INFO*.csv file contains: Sample ID, Labcode and ethnicity/country information. Do not include header in *INFO*.csv file.
      - The software will look for individuals across all three of these files and combine the information into the "gl_strings_xxx.csv" format.
+     - This option is convenient to build haplotypes from extended or multiple generation families. The software reads "Relationship" information from ".ped" file.
 
 
 
